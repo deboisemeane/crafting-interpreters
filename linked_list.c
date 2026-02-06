@@ -47,6 +47,35 @@ void insertAtEnd(Node** head, int data)
     newNode->prev = temp;
 }
 
+void insertAtPosition(Node** head, int data, int position)
+{
+    Node* newNode = createNode(data);
+    if (position < 0) {
+        printf("Position should be >= 1.\n");
+        return;
+    }
+    if (position == 1) {
+        insertAtBeginning(head, data);
+        return;
+    }
+    Node* newNode = createNode(data);
+    Node* temp = *head;
+    for(int i = 1; temp!=NULL && i < position - 1; i++) {
+        temp = temp->next;
+    }
+    if (temp == NULL) {
+        printf("Out of list range");
+        return;
+    }
+    newNode->next = temp->next;
+    newNode->prev = temp;
+    if (temp->next != NULL) {
+        temp->next->prev = newNode;
+    }
+    temp->next = newNode;
+    return;
+}
+
 int main() {
     return 0;    
 }
