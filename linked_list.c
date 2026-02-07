@@ -135,6 +135,22 @@ void deleteAtPosition(Node** head, int position) {
     free(temp);
 }
 
+int findAtPosition(Node** head, int position) {
+    if (position < 1) {
+        printf("Position must be >=1");
+        return -1;
+    }
+    Node* temp = *head;
+    for(int i=1; temp!=NULL && i<position; i++) {
+        temp = temp->next;
+    }
+    if (temp == NULL) {
+        printf("Position outside list range.\n");
+        return;
+    }
+    return temp->data;
+}
+
 int main() {
     return 0;    
 }
