@@ -152,5 +152,16 @@ int findAtPosition(Node** head, int position) {
 }
 
 int main() {
+    Node* head = NULL;
+    insertAtBeginning(&head, 1);
+    insertAtEnd(&head, 2);
+    insertAtEnd(&head, 3);
+    printf("%d\n", findAtPosition(&head, 1));
+    printf("%d\n", findAtPosition(&head, 2));
+    printf("%d\n", findAtPosition(&head, 3));
+    deleteAtPosition(&head, 2);
+    printf("%d\n", findAtPosition(&head, 1));
+    printf("%d\n", findAtPosition(&head, 2));
+    printf("%d\n", findAtPosition(&head, 3));
     return 0;    
 }
