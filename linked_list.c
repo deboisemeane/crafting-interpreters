@@ -58,7 +58,6 @@ void insertAtPosition(Node** head, int data, int position)
         insertAtBeginning(head, data);
         return;
     }
-    Node* newNode = createNode(data);
     Node* temp = *head;
     for(int i = 1; temp!=NULL && i < position - 1; i++) {
         temp = temp->next;
