@@ -99,8 +99,9 @@ void deleteAtEnd(Node** head) {
         free(temp);
         return;
     }
-    while(temp->next != NULL);
+    while(temp->next != NULL) {
         temp = temp->next;
+    }
     temp->prev->next = NULL;
     free(temp);
 }
